@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+</head>
+<body>
+    <h1>Select Category of the book and Enter Author Name</h1>
+    <label for="book">Choose Category of Books : </label>
+    <select name="books" id="books">
+        <option value="print">print</option>
+        <option value="ebook">ebook</option>
+    </select>
+    <br><br>
+    <input type="text" value="" onkeyup="search(this.value)">
+    <br><br>
+    <hr>
+    <h3>Result Will be shown here</h3>
+    <br><br>
+    <table id="display"></table>
+    
+    <script>
+
+        // We are storing all the authors name 
+        authors = ["Korth","Arihant","DasKhan","Faruzen","Thanenbum",
+        "Akash","Galvin","Coreman","Sahani","Andrw Ng","Sharlok",
+        "Anonymous","abcd","B.S Grewal","P.C Das","Moris Manno"];
+
+        function search(h){
+            if(h.length == 0){
+                document.getElementById("display").innerHTML = "";
+            }else{
+                var x = new XMLHttpRequest();
+                x.onreadystatechange = function () {
+                    if (x.readyState == 4 && x.status == 200) {
+                        var xdocs = x.responseXML;
+                        var dd_val = document.getElementById("books").value; //to get the type of the books (print|ebook)
+                        parse(xdocs,h,dd_val);
+                    }
+                };
+                x.open("GET","books.xml",true);
+                x.send();
+            }
+        }
+
+//      one book and multiple authors
+
+
+
+        function parse(xdocs,h,dd_val){
+            var p = "^"+h;
+            var str = "";
+            var r = new RegExp(p,"i");
+            var ba = xdocs.getElementsByTagName("book"); //getting array of all <book>
+            var flag;
+            // finding all our authors
+            for(var i = 0;i<authors.length;i++){
+                flag = 0;
+                if(r.test(authors[i])){ //if authors name match with regular expression
+                    for(var j = 0;j<ba.length;j++){ // traverse through all book
+                        if(ba[j].getAttribute("category") == dd_val){ // category match
+                            
+                            var auths = ba[j].getElementsByTagName("author"); //get all the authors of that book
+                            for(var k=0;k<auths.length;k++){  // traverse through all the authors of that book
+                                var ath = auths[k].childNodes[0].nodeValue; //each author
+                                if(ath == authors[i]){ // author match then store that book title
+                                    if(flag == 0){
+                                        str += "<hr><b>"+authors[i]+"</b><br>";
+                                        flag = 1;
+                                    }
+                                    str += ba[j].getElementsByTagName("title")[0].childNodes[0].nodeValue+"<br>";
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            document.getElementById("display").innerHTML = str;
+        }
+
+    </script>
+</body>
+</html>

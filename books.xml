@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+   <book id="bk101" category="print" xmlns="http://www.w3.org/TR/html4/">
+      <title>Mathematics</title>
+      <author>Korth</author>
+      <author>Arihant</author>
+      <author>DasKhan</author>
+      <price>44.95</price>
+      <publisher>2000-10-01</publisher>
+   </book>
+   <book id="bk102" category="print" xmlns="http://www.w3.org/TR/html4/">
+       <title>Operating System</title>
+      <author>Faruzen</author>
+      <author>Thanenbum</author>
+      <author>Anonymous</author>
+      <author>Akash</author>
+      <author>Galvin</author>
+      <price>44.95</price>
+      <publisher>Arihant</publisher>
+   </book>
+   <book id="bk103" category="ebook" xmlns="http://www.w3.org/TR/html4/">
+       <title>Algorithm</title>
+      <author>Coreman</author>
+      <author>Sahani</author>
+      <author>Akash</author>
+      <price>44.95</price>
+      <publisher>Tata</publisher>
+   </book>
+   <book id="bk104" category="ebook" xmlns="http://www.w3.org/TR/html4/">
+       <title>Computer Networks</title>
+       <author>Faruzen</author>
+      <author>Thanenbum</author>
+      <author>Akash</author>
+      <price>44.95</price>
+      <publisher>Springer</publisher>
+      
+   </book>
+
+   <book id="bk106" category="ebook" xmlns="http://www.w3.org/TR/html4/">
+       <title>Machine Learning</title>
+      <author>Andrw Ng</author>
+      <author>Sharlok</author>
+      <author>Anonymous</author>
+      <price>44.95</price>
+      <publisher>Chaya</publisher>
+   </book>
+
+   <book id="bk108" category="print" xmlns="http://www.w3.org/TR/html4/">
+       <title>Computer Graphics</title>
+      <author>Anonymous</author>
+      <author>Korth</author>
+      <author>abcd</author>
+      <price>44.95</price>
+      <publisher>Hachette</publisher>
+   </book>
+   <book id="bk109" category="print" xmlns="http://www.w3.org/TR/html4/">
+       <title>Mathematics</title>
+      <author>B.S Grewal</author>
+      <author>P.C Das</author>
+      <author>Akash</author>
+      <price>44.95</price>
+      <publisher>Macmillan</publisher>
+   </book>
+   <book id="bk110" category="print" xmlns="http://www.w3.org/TR/html4/">
+       <title>Digital Logic</title>
+      <author>Moris Manno</author>
+      <price>44.95</price>
+      <publisher>Hachette</publisher>
+   </book>
+
+</catalog>
